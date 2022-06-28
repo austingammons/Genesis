@@ -1,0 +1,21 @@
+-- Q.1
+
+-- CreatedOn	: 6.27.22
+-- Author		: AMG
+-- Description  : Get all users and their addresses
+
+-- Notes
+-- UsrKey typo on tbl Address
+
+SELECT 
+users.UserKey, 
+users.FirstName, 
+users.LastName, 
+addresses.AddressKey,
+addresses.Address1, 
+addresses.Address2, 
+addresses.City,
+addresses.[State],
+addresses.ZipCode
+FROM [dbo].[User] AS users
+INNER JOIN [dbo].[Address] AS addresses ON users.UserKey = addresses.UserKey
